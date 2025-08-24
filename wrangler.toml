@@ -1,8 +1,8 @@
 name = "sveltia-cms-prueba"
 main = "src/index.js"
-compatibility_date = "2023-08-24" # poné la fecha actual o una reciente
+compatibility_date = "2025-08-24"
 
 [vars]
 GITHUB_CLIENT_ID = "Ov23lizFauqg5DImQOtf"
 GITHUB_CLIENT_SECRET = "623247926278ffbf8bd206f69aeca76c73ebda60"
-OAUTH_CALLBACK = "https://sebastiandemo.netlify.app/.netlify/functions/callback"
+ALLOWED_DOMAINS = "sebastiandemo.netlify.app"

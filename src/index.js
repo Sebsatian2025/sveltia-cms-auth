@@ -107,11 +107,11 @@ const handleAuth = async (request, env) => {
       });
     }
 
-    const params = new URLSearchParams({
-      client_id: GITHUB_CLIENT_ID,
-      scope: 'repo,user',
-      state: csrfToken,
-    });
+const params = new URLSearchParams({
+  client_id: GITHUB_CLIENT_ID,
+  scope: 'repo,read:user,user:email',
+  state: csrfToken,
+});
 
     authURL = `https://${GITHUB_HOSTNAME}/login/oauth/authorize?${params.toString()}`;
   }

@@ -1,3 +1,8 @@
-name = "sveltia-cms-auth"
-main = "src/index.js"
-compatibility_date = "2023-03-24"
+name = "sveltia-cms-prueba"
+main = "index.js"
+compatibility_date = "2023-08-24" # poné la fecha actual o una reciente
+
+[vars]
+GITHUB_CLIENT_ID = "Ov23liXrrcUpP0ly32X3"
+GITHUB_CLIENT_SECRET = "24c18f9464f76a04bd9997b84862b1698b4eb7a9"
+OAUTH_CALLBACK = "https://sebastiandemo.netlify.app/.netlify/functions/callback"

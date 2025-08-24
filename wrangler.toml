@@ -1,5 +1,5 @@
 name = "sveltia-cms-prueba"
-main = "index.js"
+main = "src/index.js"
 compatibility_date = "2023-08-24" # poné la fecha actual o una reciente
 
 [vars]

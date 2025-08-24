@@ -4,6 +4,6 @@ compatibility_date = "2025-08-24"
 
 [vars]
 GITHUB_CLIENT_ID = "Ov23lizFauqg5DImQOtf"
-GITHUB_CLIENT_SECRET = "623247926278ffbf8bd206f69aeca76c73ebda60"
+GITHUB_CLIENT_SECRET = "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"
 ALLOWED_DOMAINS = "sebastiandemo.netlify.app"
 OAUTH_CALLBACK = "https://sveltia-cms-prueba.kitdelanzamientodigital.workers.dev/callback"

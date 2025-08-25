@@ -44,7 +44,7 @@ const outputHTML = ({ provider = 'unknown', token, error, errorCode }) => {
       headers: {
         'Content-Type': 'text/html;charset=UTF-8',
         // Delete CSRF token
-        'Set-Cookie': `csrf-token=deleted; HttpOnly; Max-Age=0; Path=/; SameSite=Lax; Secure`,
+        'Set-Cookie': `csrf-token=deleted; HttpOnly; Max-Age=0; Path=/; SameSite=None; Secure`,
       },
     },
   );

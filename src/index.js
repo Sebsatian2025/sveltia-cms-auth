@@ -38,7 +38,7 @@ const outputHTML = ({ provider = 'unknown', token, error, errorCode }) => {
     {
       headers: {
         'Content-Type': 'text/html;charset=UTF-8',
-        // Delete CSRF token cookie (using SameSite=None for cross-site)
+        // Borramos el CSRF token con SameSite=None
         'Set-Cookie': `csrf-token=deleted; HttpOnly; Max-Age=0; Path=/; SameSite=None; Secure`
       }
     }
@@ -49,13 +49,10 @@ const outputHTML = ({ provider = 'unknown', token, error, errorCode }) => {
  * Handle the `auth` method: initiate OAuth flow.
  */
 const handleAuth = async (request, env) => {
-  const { url } = request;
-  const { origin, searchParams } = new URL(url);
-  const { provider, site_id: domain } = Object.fromEntries(
-    searchParams
-  );
+  const { searchParams } = new URL(request.url);
+  const { provider, site_id: domain } = Object.fromEntries(searchParams);
 
-  if (!provider || !supportedProviders.includes(provider)) {
+  if (!supportedProviders.includes(provider)) {
     return outputHTML({
       error: 'Your Git backend is not supported by the authenticator.',
       errorCode: 'UNSUPPORTED_BACKEND'
@@ -72,14 +69,12 @@ const handleAuth = async (request, env) => {
     GITLAB_HOSTNAME = 'gitlab.com'
   } = env;
 
-  // Check if the domain is whitelisted
+  // Domain whitelist
   if (
     ALLOWED_DOMAINS &&
     !ALLOWED_DOMAINS.split(',').some((str) =>
       (domain ?? '').match(
-        new RegExp(
-          `^${escapeRegExp(str.trim()).replace('\\*', '.+')}$`
-        )
+        new RegExp(`^${escapeRegExp(str.trim()).replace('\\*', '.+')}$`)
       )
     )
   ) {
@@ -90,11 +85,11 @@ const handleAuth = async (request, env) => {
     });
   }
 
-  // Generate a random string for CSRF protection
+  // CSRF token
   const csrfToken = crypto.randomUUID().replaceAll('-', '');
   let authURL = '';
 
-  // GitHub
+  // GitHub auth URL
   if (provider === 'github') {
     if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
       return outputHTML({
@@ -103,16 +98,15 @@ const handleAuth = async (request, env) => {
         errorCode: 'MISCONFIGURED_CLIENT'
       });
     }
-
     const params = new URLSearchParams({
       client_id: GITHUB_CLIENT_ID,
       scope: 'repo,read:user,user:email',
       state: csrfToken
     });
-    authURL = `https://${GITHUB_HOSTNAME}/login/oauth/authorize?${params.toString()}`;
+    authURL = `https://${GITHUB_HOSTNAME}/login/oauth/authorize?${params}`;
   }
 
-  // GitLab
+  // GitLab auth URL
   if (provider === 'gitlab') {
     if (!GITLAB_CLIENT_ID || !GITLAB_CLIENT_SECRET) {
       return outputHTML({
@@ -121,18 +115,17 @@ const handleAuth = async (request, env) => {
         errorCode: 'MISCONFIGURED_CLIENT'
       });
     }
-
     const params = new URLSearchParams({
       client_id: GITLAB_CLIENT_ID,
-      redirect_uri: `${origin}/callback`,
+      redirect_uri: `${new URL(request.url).origin}/callback`,
       response_type: 'code',
       scope: 'api',
       state: csrfToken
     });
-    authURL = `https://${GITLAB_HOSTNAME}/oauth/authorize?${params.toString()}`;
+    authURL = `https://${GITLAB_HOSTNAME}/oauth/authorize?${params}`;
   }
 
-  // Redirect to the authorization server, setting CSRF cookie with SameSite=None
+  // Redirigir a GitHub/GitLab y setear CSRF cookie como first-party
   return new Response('', {
     status: 302,
     headers: {
@@ -145,36 +138,30 @@ const handleAuth = async (request, env) => {
 /**
  * Handle the `callback` method: complete OAuth flow.
  */
-const handleCallback = async (request, env) => {
-  const { url, headers } = request;
-  const { origin, searchParams } = new URL(url);
+const handleCallback = async (request) => {
+  const { searchParams, origin } = new URL(request.url);
   const { code, state } = Object.fromEntries(searchParams);
-
-  // Extract provider and csrfToken from the cookie
+  const cookie = request.headers.get('Cookie') || '';
   const [, provider, csrfToken] =
-    headers
-      .get('Cookie')
-      ?.match(/\bcsrf-token=([a-z-]+?)_([0-9a-f]{32})\b/) ?? [];
+    cookie.match(/\bcsrf-token=([a-z-]+?)_([0-9a-f]{32})\b/) ?? [];
 
-  if (!provider || !supportedProviders.includes(provider)) {
+  if (!supportedProviders.includes(provider)) {
     return outputHTML({
       error: 'Your Git backend is not supported by the authenticator.',
       errorCode: 'UNSUPPORTED_BACKEND'
     });
   }
-
   if (!code || !state) {
     return outputHTML({
       provider,
-      error: 'Failed to receive an authorization code. Please try again later.',
+      error: 'Failed to receive an authorization code.',
       errorCode: 'AUTH_CODE_REQUEST_FAILED'
     });
   }
-
-  if (!csrfToken || state !== csrfToken) {
+  if (state !== csrfToken) {
     return outputHTML({
       provider,
-      error: 'Potential CSRF attack detected. Authentication flow aborted.',
+      error: 'Potential CSRF attack detected.',
       errorCode: 'CSRF_DETECTED'
     });
   }
@@ -188,16 +175,10 @@ const handleCallback = async (request, env) => {
     GITLAB_HOSTNAME = 'gitlab.com'
   } = env;
 
-  let tokenURL = '';
-  let requestBody = {};
-
+  let tokenURL, requestBody;
   if (provider === 'github') {
     tokenURL = `https://${GITHUB_HOSTNAME}/login/oauth/access_token`;
-    requestBody = {
-      code,
-      client_id: GITHUB_CLIENT_ID,
-      client_secret: GITHUB_CLIENT_SECRET
-    };
+    requestBody = { code, client_id: GITHUB_CLIENT_ID, client_secret: GITHUB_CLIENT_SECRET };
   } else {
     tokenURL = `https://${GITLAB_HOSTNAME}/oauth/token`;
     requestBody = {
@@ -209,38 +190,34 @@ const handleCallback = async (request, env) => {
     };
   }
 
-  let response, json;
+  let res, json;
   try {
-    response = await fetch(tokenURL, {
+    res = await fetch(tokenURL, {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
+      headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       body: JSON.stringify(requestBody)
     });
-    json = await response.json();
+    json = await res.json();
   } catch {
     return outputHTML({
       provider,
-      error: 'Failed to request an access token. Please try again later.',
+      error: 'Failed to request an access token.',
       errorCode: 'TOKEN_REQUEST_FAILED'
     });
   }
 
-  const { access_token: token, error } = json;
-  return outputHTML({ provider, token, error });
+  return outputHTML({ provider, token: json.access_token, error: json.error });
 };
 
 /**
- * Main fetch handler
+ * Main fetch handler: primero OAuth, luego static site.
  */
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const { pathname } = url;
 
-    // OAuth routes
+    // 1) OAuth endpoints
     if (
       request.method === 'GET' &&
       ['/auth', '/oauth/authorize'].includes(pathname)
@@ -254,12 +231,17 @@ export default {
       return handleCallback(request, env);
     }
 
-    // Static asset routes (Workers Sites)
+    // 2) Redirige "/admin" → "/admin/"
+    if (request.method === 'GET' && pathname === '/admin') {
+      return Response.redirect(`${url.origin}/admin/`, 302);
+    }
+
+    // 3) Static assets (Workers Sites: public/)
     if (request.method === 'GET') {
       return env.__STATIC_CONTENT.fetch(request);
     }
 
-    // Fallback 404
+    // 4) Fallback 404
     return new Response('Not found', { status: 404 });
   }
 };

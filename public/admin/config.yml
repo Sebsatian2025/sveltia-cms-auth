@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: "Sebsatian2025/democms"        
+  branch: "main"
+
+  auth_type: authorization_code       
+  base_url: "https://sveltia-cms-prueba.kitdelanzamientodigital.workers.dev"
+  auth_endpoint: "auth"                 
+  token_endpoint: "callback"            
+
+media_folder: "assets/images"
+public_folder: "/images"
+
+collections:
+  - name: "site_content"
+    label: "Contenido del sitio"
+    files:
+      - label: "Header"
+        name: "header"
+        file: "content/header.md"
+        fields:
+          - { label: "Imagen de fondo",  name: "header_background", widget: "image"  }
+          - { label: "Título principal", name: "header_title",      widget: "string" }
+          - { label: "Subtítulo",        name: "header_subtitle",   widget: "string" }
+          - { label: "Texto del botón",  name: "header_button_text",widget: "string" }
+          - { label: "Enlace del botón", name: "header_button_link",widget: "string" }
+
+
+
+
+
+
+
+
+
+
+

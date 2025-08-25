@@ -146,7 +146,7 @@ const params = new URLSearchParams({
       // browser after redirect
       'Set-Cookie':
         `csrf-token=${provider}_${csrfToken}; ` +
-        `HttpOnly; Path=/; Max-Age=600; SameSite=Lax; Secure`,
+        `HttpOnly; Path=/; Max-Age=600; SameSite=None; Secure`,
     },
   });
 };

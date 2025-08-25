@@ -1,44 +1,29 @@
 name: Deploy Worker + Admin UI
 
-# Se ejecuta cada vez que haces push a la rama 'main'
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-
-      # 1) Traer el código
       - name: Checkout repo
         uses: actions/checkout@v5
 
-      # 2) (Opcional) Instalar pnpm / Node / Build
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          cache: 'npm'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: latest
+      # Instalamos Wrangler globalmente con npm (evitamos pnpm)
+      - name: Install Wrangler
+        run: npm install -g @cloudflare/wrangler
 
-      # Si tu proyecto necesita build (por ej. Vite/Rollup), descomenta esto:
-      #- name: Install deps & build
-      #  run: |
-      #    pnpm install
-      #    pnpm run build
-
-      # 3) Publicar en Cloudflare Workers (incluye Assets de public/)
-      - name: Publish to Workers
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-
-      # 4) (Opcional) Notificar o hacer algo tras el deploy…
-      #- name: Slack notification
-      #  run: echo "Deploy finished"
+      # Publicamos tu Worker + site
+      - name: Publish to Cloudflare
+        run: wrangler publish
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}

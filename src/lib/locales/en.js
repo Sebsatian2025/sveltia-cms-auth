@@ -1,0 +1,813 @@
+/**
+ * IMPORTANTE: Estas cadenas no están listas para la localización. NO TRADUZCAS ESTE ARCHIVO.
+ * @see https://github.com/sveltia/sveltia-cms/blob/main/src/lib/locales/README.md
+ */
+export const strings = {
+  // Páginas y Navegación
+  collections: 'Colecciones',
+  contents: 'Contenidos',
+  entries: 'Entradas',
+  files: 'Archivos',
+  assets: 'Recursos',
+  media: 'Multimedia',
+  workflow: 'Flujo de trabajo',
+  editorial_workflow: 'Flujo de trabajo editorial',
+  menu: 'Menú',
+
+  // Cuenta
+  user_name: 'Nombre de usuario',
+  password: 'Contraseña',
+  sign_in: 'Iniciar sesión',
+  sign_in_with_mobile: 'Iniciar sesión con móvil',
+  sign_in_with_mobile_instruction:
+    'Escanea el código QR de abajo con tu teléfono o tablet para iniciar sesión sin contraseña. Tus ajustes se copiarán automáticamente.',
+  signed_in_as_x: 'Sesión iniciada como {name}',
+  working_with_local_repo: 'Trabajando con el repositorio local',
+  working_with_test_repo: 'Trabajando con el repositorio de prueba',
+  sign_out: 'Cerrar sesión',
+
+  // Términos comunes
+  create: 'Nuevo',
+  select: 'Seleccionar',
+  select_all: 'Seleccionar todo',
+  upload: 'Subir',
+  copy: 'Copiar',
+  download: 'Descargar',
+  duplicate: 'Duplicar',
+  delete: 'Eliminar',
+  save: 'Guardar',
+  saving: 'Guardando…',
+  rename: 'Renombrar',
+  update: 'Actualizar',
+  replace: 'Reemplazar',
+  add: 'Añadir',
+  remove: 'Quitar',
+  remove_x: 'Quitar {name}',
+  clear: 'Borrar',
+  expand: 'Expandir',
+  expand_all: 'Expandir todo',
+  collapse: 'Contraer',
+  collapse_all: 'Contraer todo',
+  insert: 'Insertar',
+  restore: 'Restaurar',
+  discard: 'Descartar',
+  searching: 'Buscando…',
+  no_results: 'No se encontraron resultados.',
+  global: 'Global',
+  primary: 'Principal',
+  secondary: 'Secundario',
+  collection: 'Colección',
+  folder: 'Carpeta',
+  api_key: 'Clave de API',
+  details: 'Detalles',
+  back: 'Atrás',
+  loading: 'Cargando…',
+  later: 'Más tarde',
+
+  // Errores comunes
+  clipboard_error: 'Hubo un error al copiar los datos.',
+
+  // Entrada
+  welcome_to_sveltia_cms: 'Bienvenido a Sveltia CMS',
+  loading_site_config: 'Cargando configuración del sitio…',
+  loading_site_data: 'Cargando datos del sitio…',
+  loading_site_data_error: 'Hubo un error al cargar los datos del sitio.',
+  sign_in_with_x: 'Iniciar sesión con {service}',
+  use_regular_authentication_flow: 'Usar flujo de autenticación regular',
+  use_personal_access_token: 'Usar token de acceso personal',
+  sign_in_using_pat_title: 'Iniciar sesión usando un token de acceso personal',
+  sign_in_using_pat_description:
+    'Introduce tu token a continuación. Debe tener acceso de lectura/escritura al contenido del repositorio.',
+  personal_access_token: 'Token de acceso personal',
+  authorizing: 'Autorizando…',
+  signing_in: 'Iniciando sesión…',
+  work_with_local_repo: 'Trabajar con el repositorio local',
+  work_with_local_repo_description:
+    'Haz clic en el botón para seleccionar el directorio raíz del repositorio “{repo}”.',
+  work_with_local_repo_description_no_repo:
+    'Haz clic en el botón para seleccionar el directorio raíz de tu repositorio Git.',
+  work_with_test_repo: 'Trabajar con el repositorio de prueba',
+  sign_in_error: {
+    not_project_root:
+      'La carpeta que has seleccionado no es un directorio raíz de repositorio. Por favor, inténtalo de nuevo.',
+    picker_dismissed: 'No se pudo seleccionar un directorio raíz de repositorio. Por favor, inténtalo de nuevo.',
+    authentication_aborted: 'Autenticación cancelada. Por favor, inténtalo de nuevo.',
+    invalid_token: 'El token proporcionado no es válido. Por favor, revísalo e inténtalo de nuevo.',
+    // Errores definidos en Sveltia CMS Authenticator
+    // https://github.com/sveltia/sveltia-cms-auth/blob/main/src/index.js
+    UNSUPPORTED_BACKEND: 'Tu backend de Git no es compatible con el autenticador.',
+    UNSUPPORTED_DOMAIN: 'Tu dominio no tiene permitido usar el autenticador.',
+    MISCONFIGURED_CLIENT: 'El ID o el secreto del cliente de la aplicación OAuth no está configurado.',
+    AUTH_CODE_REQUEST_FAILED: 'No se pudo recibir un código de autorización. Por favor, inténtalo de nuevo más tarde.',
+    CSRF_DETECTED: 'Se ha detectado un posible ataque CSRF. Flujo de autenticación cancelado.',
+    TOKEN_REQUEST_FAILED: 'No se pudo solicitar un token de acceso. Por favor, inténtalo de nuevo más tarde.',
+    TOKEN_REFRESH_FAILED: 'No se pudo actualizar el token de acceso. Por favor, inténtalo de nuevo más tarde.',
+    MALFORMED_RESPONSE: 'El servidor respondió con datos mal formados. Por favor, inténtalo de nuevo más tarde.',
+  },
+  backend_unsupported_version: 'El backend {name} requiere {name} {version} o posterior.',
+  repository_no_access: 'No tienes acceso al repositorio “{repo}”.',
+  repository_not_found: 'El repositorio “{repo}” no existe.',
+  repository_empty: 'El repositorio “{repo}” no tiene ramas.',
+  branch_not_found: 'El repositorio “{repo}” no tiene la rama “{branch}”.',
+  unexpected_error: 'Error inesperado',
+
+  // Errores del analizador
+  entry_parse_error:
+    'Hubo un error al analizar un archivo de entrada. Revisa la consola del navegador para más detalles.',
+  entry_parse_errors:
+    'Hubo errores al analizar los archivos de entrada. Revisa la consola del navegador para más detalles.',
+
+  // Incorporación
+  mobile_promo_title: '¡Sveltia CMS ya está disponible en móvil!',
+  mobile_promo_button: 'Pruébalo',
+
+  // Barra de herramientas global
+  visit_live_site: 'Visitar sitio en vivo',
+  switch_page: 'Cambiar página',
+  search_placeholder_entries: 'Buscar entradas…',
+  search_placeholder_assets: 'Buscar recursos…',
+  search_placeholder_all: 'Buscar entradas y recursos…',
+  create_entry_or_assets: 'Crear entrada o recursos',
+  publish_changes: 'Publicar cambios',
+  publishing_changes: 'Publicando cambios…',
+  publishing_changes_failed: 'No se pudieron publicar los cambios. Por favor, inténtalo de nuevo más tarde.',
+  show_notifications: 'Mostrar notificaciones',
+  notifications: 'Notificaciones',
+  show_account_menu: 'Mostrar menú de cuenta',
+  account: 'Cuenta',
+  live_site: 'Sitio en vivo',
+  git_repository: 'Repositorio Git',
+  settings: 'Ajustes',
+  site_config: 'Configuración del sitio',
+  show_help_menu: 'Mostrar menú de ayuda',
+  help: 'Ayuda',
+  keyboard_shortcuts: 'Atajos de teclado',
+  documentation: 'Documentación',
+  release_notes: 'Notas de la versión',
+  version_x: 'Versión {version}',
+  report_issue: 'Reportar un problema',
+  share_feedback: 'Compartir comentarios',
+  get_help: 'Obtener ayuda',
+  join_discord: 'Únete a nosotros en Discord',
+
+  // Notificación de actualización
+  update_available: 'La última versión de Sveltia CMS está disponible.',
+  update_now: 'Actualizar ahora',
+
+  // Indicador de estado del backend
+  backend_status: {
+    minor_incident:
+      '{service} está experimentando un incidente menor. Tu flujo de trabajo podría verse afectado.',
+    major_incident:
+      '{service} está experimentando un incidente mayor. Quizás quieras esperar hasta que la situación mejore.',
+  },
+
+  // Biblioteca
+  content_library: 'Biblioteca de contenidos',
+  asset_library: 'Biblioteca de recursos',
+  asset_location: {
+    repository: 'Tu sitio',
+    external: 'Ubicaciones externas',
+    stock_photos: 'Fotos de stock',
+  },
+  collection_assets: 'Recursos de la colección',
+  entry_list: 'Lista de entradas',
+  file_list: 'Lista de archivos',
+  asset_list: 'Lista de recursos',
+  x_collection: 'Colección “{collection}”',
+  x_asset_folder: 'Carpeta de recursos “{folder}”',
+  viewing_collection_list: 'Ahora estás viendo la lista de colecciones.',
+  viewing_asset_folder_list: 'Ahora estás viendo la lista de carpetas de recursos.',
+  viewing_x_collection_many_entries:
+    'Ahora estás viendo la colección “{collection}”, que tiene {count} entradas.',
+  viewing_x_collection_one_entry:
+    'Ahora estás viendo la colección “{collection}”, que tiene una entrada.',
+  viewing_x_collection_no_entries:
+    'Ahora estás viendo la colección “{collection}”, que aún no tiene entradas.',
+  viewing_x_asset_folder_many_assets:
+    'Ahora estás viendo la carpeta de recursos “{folder}”, que tiene {count} recursos.',
+  viewing_x_asset_folder_one_asset:
+    'Ahora estás viendo la carpeta de recursos “{folder}”, que tiene un recurso.',
+  viewing_x_asset_folder_no_assets:
+    'Ahora estás viendo la carpeta de recursos “{folder}”, que aún no tiene recursos.',
+  singleton_selected_announcement: 'Pulsa Enter para editar el archivo “{file}”.',
+  collection_not_found: 'Colección no encontrada',
+  file_not_found: 'Archivo no encontrado.',
+  x_of_x_selected: '{selected} de {total} seleccionados',
+  switch_view: 'Cambiar vista',
+  list_view: 'Vista de lista',
+  grid_view: 'Vista de cuadrícula',
+  switch_to_list_view: 'Cambiar a vista de lista',
+  switch_to_grid_view: 'Cambiar a vista de cuadrícula',
+  sort: 'Ordenar',
+  sorting_options: 'Opciones de ordenación',
+  sort_keys: {
+    none: 'Ninguno',
+    name: 'Nombre',
+    slug: 'Slug',
+    commit_author: 'Actualizado por',
+    commit_date: 'Actualizado el',
+  },
+  ascending: '{label}, A a Z',
+  ascending_date: '{label}, antiguo a nuevo',
+  descending: '{label}, Z a A',
+  descending_date: '{label}, nuevo a antiguo',
+  filter: 'Filtrar',
+  filtering_options: 'Opciones de filtrado',
+  group: 'Agrupar', // Verbo
+  grouping_options: 'Opciones de agrupación',
+  type: 'Tipo',
+  all: 'Todos',
+  image: 'Imagen',
+  video: 'Vídeo',
+  audio: 'Audio',
+  document: 'Documento',
+  other: 'Otro',
+  show_assets: 'Mostrar recursos',
+  hide_assets: 'Ocultar recursos',
+  show_info: 'Mostrar información',
+  hide_info: 'Ocultar información',
+  all_assets: 'Todos los recursos',
+  global_assets: 'Recursos globales',
+  creating_entries_disabled_by_admin:
+    'La creación de nuevas entradas en esta colección está deshabilitada por el administrador.',
+  creating_entries_disabled_by_limit:
+    'No puedes añadir nuevas entradas a esta colección porque ha alcanzado su límite de {limit} entradas.',
+  back_to_collection: 'Volver a la colección',
+  collection_list: 'Lista de colecciones',
+  back_to_collection_list: 'Volver a la lista de colecciones',
+  asset_folder_list: 'Lista de carpetas de recursos',
+  back_to_asset_folder_list: 'Volver a la lista de carpetas de recursos',
+  search_results: 'Resultados de la búsqueda',
+  search_results_for_x: 'Resultados de la búsqueda para “{terms}”',
+  viewing_entry_search_results:
+    'Ahora estás viendo los resultados de la búsqueda para “{terms}”. Hemos encontrado {entries}.',
+  viewing_asset_search_results:
+    'Ahora estás viendo los resultados de la búsqueda para “{terms}”. Hemos encontrado {assets}.',
+  many_entries: '{count} entradas',
+  one_entry: 'una entrada',
+  no_entries: 'ninguna entrada',
+  many_assets: '{count} recursos',
+  one_asset: 'un recurso',
+  no_assets: 'ningún recurso',
+  no_files_found: 'No se encontraron archivos.',
+  no_entries_found: 'No se encontraron entradas.',
+  upload_assets: 'Subir nuevos recursos',
+  edit_options: 'Opciones de edición',
+  show_edit_options: 'Mostrar opciones de edición',
+  edit_asset: 'Editar recurso',
+  edit_x: 'Editar {name}',
+  wrap_long_lines: 'Ajustar líneas largas',
+  rename_asset: 'Renombrar recurso',
+  rename_x: 'Renombrar {name}',
+  enter_new_name_for_asset: 'Introduce un nuevo nombre a continuación.',
+  enter_new_name_for_asset_with_one_entry:
+    'Introduce un nuevo nombre a continuación. También se actualizará una entrada que utiliza el recurso.',
+  enter_new_name_for_asset_with_many_entries:
+    'Introduce un nuevo nombre a continuación. También se actualizarán {count} entradas que utilizan el recurso.',
+  enter_new_name_for_asset_error: {
+    empty: 'El nombre del archivo no puede estar vacío.',
+    character: 'El nombre del archivo no puede contener caracteres especiales.',
+    duplicate: 'Este nombre de archivo ya se usa para otro recurso.',
+  },
+  replace_asset: 'Reemplazar recurso',
+  replace_x: 'Reemplazar {name}',
+  tap_to_browse: 'Toca para buscar…',
+  drop_file_or_click_to_browse: 'Arrastra un archivo aquí o haz clic para buscar…',
+  drop_files_or_click_to_browse: 'Arrastra archivos aquí o haz clic para buscar…',
+  drop_image_file_or_click_to_browse: 'Arrastra un archivo de imagen aquí o haz clic para buscar…',
+  drop_image_files_or_click_to_browse: 'Arrastra archivos de imagen aquí o haz clic para buscar…',
+  drop_file_here: 'Arrastra un archivo aquí',
+  drop_files_here: 'Arrastra archivos aquí',
+  unsupported_file_type: 'Tipo de archivo no compatible',
+  dropped_file_type_mismatch: 'El archivo arrastrado no es de tipo {type}. Por favor, inténtalo de nuevo.',
+  dropped_image_type_mismatch:
+    'El archivo arrastrado no es compatible. Solo se aceptan imágenes AVIF, GIF, JPEG, PNG, WebP o SVG. Por favor, inténtalo de nuevo.',
+  choose_file: 'Elegir archivo',
+  choose_files: 'Elegir archivos',
+  delete_asset: 'Eliminar recurso',
+  delete_assets: 'Eliminar recursos',
+  delete_selected_asset: 'Eliminar recurso seleccionado',
+  delete_selected_assets: 'Eliminar recursos seleccionados',
+  confirm_deleting_this_asset: '¿Estás seguro de que quieres eliminar este recurso?',
+  confirm_deleting_selected_asset: '¿Estás seguro de que quieres eliminar el recurso seleccionado?',
+  confirm_deleting_selected_assets: '¿Estás seguro de que quieres eliminar los {count} recursos seleccionados?',
+  confirm_deleting_all_assets: '¿Estás seguro de que quieres eliminar todos los recursos?',
+  delete_entry: 'Eliminar entrada',
+  delete_entries: 'Eliminar entradas',
+  delete_selected_entry: 'Eliminar entrada seleccionada',
+  delete_selected_entries: 'Eliminar entradas seleccionadas',
+  confirm_deleting_this_entry: '¿Estás seguro de que quieres eliminar esta entrada?',
+  confirm_deleting_this_entry_with_assets:
+    '¿Estás seguro de que quieres eliminar esta entrada y los recursos asociados?',
+  confirm_deleting_selected_entry: '¿Estás seguro de que quieres eliminar la entrada seleccionada?',
+  confirm_deleting_selected_entry_with_assets:
+    '¿Estás seguro de que quieres eliminar la entrada seleccionada y los recursos asociados?',
+  confirm_deleting_selected_entries: '¿Estás seguro de que quieres eliminar las {count} entradas seleccionadas?',
+  confirm_deleting_selected_entries_with_assets:
+    '¿Estás seguro de que quieres eliminar las {count} entradas seleccionadas y los recursos asociados?',
+  confirm_deleting_all_entries: '¿Estás seguro de que quieres eliminar todas las entradas?',
+  confirm_deleting_all_entries_with_assets:
+    '¿Estás seguro de que quieres eliminar todas las entradas y los recursos asociados?',
+  processing_file: 'Procesando un archivo. Esto puede tardar un poco.',
+  processing_files: 'Procesando archivos. Esto puede tardar un poco.',
+  uploading_files: 'Subiendo archivos',
+  confirm_replacing_file: '¿Estás seguro de que quieres reemplazar “{name}” con el siguiente archivo?',
+  confirm_uploading_file: '¿Estás seguro de que quieres guardar el siguiente archivo en la carpeta “{folder}”?',
+  confirm_uploading_files:
+    '¿Estás seguro de que quieres guardar los siguientes {count} archivos en la carpeta “{folder}”?',
+  oversized_files: 'Archivos demasiado grandes',
+  warning_oversized_file:
+    'Este archivo no se puede subir porque supera el tamaño máximo de {size}. Por favor, reduce el tamaño o selecciona un archivo diferente.',
+  warning_oversized_files:
+    'Estos archivos no se pueden subir porque superan el tamaño máximo de {size}. Por favor, reduce los tamaños o selecciona archivos diferentes.',
+  file_meta: '{type} · {size}',
+  file_meta_converted_from_x: '(convertido de {type})',
+  no_entries_created: 'Esta colección aún no tiene entradas.',
+  create_new_entry: 'Crear nueva entrada',
+  entry: 'Entrada',
+  index_file: 'Archivo de índice',
+  no_files_in_collection: 'No hay archivos disponibles en esta colección.',
+  asset_info: 'Información del recurso',
+  select_asset_show_info: 'Selecciona un recurso para mostrar la información.',
+  duplicate_entry: 'Duplicar entrada',
+  entry_duplicated: 'La entrada ha sido duplicada. Ahora es un nuevo borrador.',
+  entry_validation_error: 'Un campo tiene un error. Por favor, corrígelo para guardar la entrada.',
+  entry_validation_errors: '{count} campos tienen un error. Por favor, corrígelos para guardar la entrada.',
+  entry_saved: 'La entrada ha sido guardada.',
+  entry_saved_and_published: 'La entrada ha sido guardada y publicada.',
+  entry_deleted: 'La entrada ha sido eliminada.',
+  entries_deleted: '{count} entradas han sido eliminadas.',
+  asset_saved: 'El recurso ha sido guardado.',
+  asset_saved_and_published: 'El recurso ha sido guardado y publicado.',
+  assets_saved: '{count} recursos han sido guardados.',
+  assets_saved_and_published: '{count} recursos han sido guardados y publicados.',
+  asset_url_copied: 'La URL del recurso ha sido copiada al portapapeles.',
+  asset_urls_copied: 'Las URLs de los recursos han sido copiadas al portapapeles.',
+  asset_path_copied: 'La ruta del archivo del recurso ha sido copiada al portapapeles.',
+  asset_paths_copied: 'Las rutas de los archivos de los recursos han sido copiadas al portapapeles.',
+  asset_data_copied: 'El archivo del recurso ha sido copiado al portapapeles.',
+  asset_downloaded: 'El archivo del recurso ha sido descargado.',
+  assets_downloaded: 'Los archivos de los recursos han sido descargados.',
+  asset_moved: 'El recurso ha sido movido.',
+  assets_moved: '{count} recursos han sido movidos.',
+  asset_renamed: 'El recurso ha sido renombrado.',
+  assets_renamed: '{count} recursos han sido renombrados.',
+  asset_deleted: 'El recurso ha sido eliminado.',
+  assets_deleted: '{count} recursos han sido eliminados.',
+
+  // Editor de contenido
+  content_editor: 'Editor de contenido',
+  restore_backup_title: 'Restaurar borrador',
+  restore_backup_description:
+    'Esta entrada tiene una copia de seguridad del {datetime}. ¿Quieres restaurar el borrador editado?',
+  draft_backup_saved: 'La copia de seguridad del borrador ha sido guardada.',
+  draft_backup_restored: 'La copia de seguridad del borrador ha sido restaurada.',
+  draft_backup_deleted: 'La copia de seguridad del borrador ha sido eliminada.',
+  cancel_editing: 'Cancelar edición',
+  create_entry_title: 'Creando {name}',
+  create_entry_announcement: 'Ahora estás creando una nueva entrada en la colección “{collection}”.',
+  edit_entry_title: '{collection} › {entry}',
+  edit_entry_announcement:
+    'Ahora estás editando la entrada “{entry}” en la colección “{collection}”.',
+  edit_file_announcement: 'Ahora estás editando el archivo “{file}” en la colección “{collection}”.',
+  edit_singleton_announcement: 'Ahora estás editando el archivo “{file}”.',
+  save_and_publish: 'Guardar y publicar',
+  save_without_publishing: 'Guardar sin publicar',
+  show_editor_options: 'Mostrar opciones del editor',
+  editor_options: 'Opciones del editor',
+  show_preview: 'Mostrar vista previa',
+  sync_scrolling: 'Sincronizar desplazamiento',
+  switch_locale: 'Cambiar idioma',
+  locale_content_disabled_short: '(deshabilitado)',
+  locale_content_error_short: '(error)',
+  edit: 'Editar',
+  preview: 'Vista previa',
+  edit_x_locale: 'Editar contenido en {locale}',
+  preview_x_locale: 'Vista previa del contenido en {locale}',
+  content_preview: 'Vista previa del contenido',
+  show_content_options_x_locale: 'Mostrar opciones de contenido en {locale}',
+  content_options_x_locale: 'Opciones de contenido en {locale}',
+  x_field: 'Campo “{field}”',
+  show_field_options: 'Mostrar opciones del campo',
+  field_options: 'Opciones del campo',
+  unsupported_widget_x: 'Widget no compatible: {name}',
+  enable_x_locale: 'Habilitar {locale}',
+  reenable_x_locale: 'Volver a habilitar {locale}',
+  disable_x_locale: 'Deshabilitar {locale}',
+  locale_x_has_been_disabled: 'El contenido en {locale} ha sido deshabilitado.',
+  locale_x_now_disabled:
+    'El contenido en {locale} ahora está deshabilitado. Se eliminará cuando guardes la entrada.',
+  view_in_repository: 'Ver en el repositorio',
+  view_on_x: 'Ver en {service}',
+  view_on_live_site: 'Ver en el sitio en vivo',
+  copy_from: 'Copiar de…',
+  copy_from_x: 'Copiar de {locale}',
+  translation_options: 'Opciones de traducción',
+  translate: 'Traducir',
+  translate_field: 'Traducir campo',
+  translate_fields: 'Traducir campos',
+  translate_from: 'Traducir de…',
+  translate_from_x: 'Traducir de {locale}',
+  revert_changes: 'Revertir cambios',
+  revert_all_changes: 'Revertir todos los cambios',
+  edit_slug: 'Editar slug',
+  edit_slug_warning:
+    'Cambiar el slug puede romper los enlaces internos y externos a la entrada. Actualmente, Sveltia CMS no actualiza las referencias creadas con el widget de Relación, por lo que tendrás que actualizar manualmente dichas referencias junto con otros enlaces.',
+  edit_slug_error: {
+    empty: 'El slug no puede estar vacío.',
+    duplicate: 'Este slug ya se usa para otra entrada.',
+  },
+  required: 'Requerido',
+  editor: {
+    translation: {
+      none: 'No se ha traducido nada.',
+      started: 'Traduciendo…',
+      error: 'Hubo un error al traducir.',
+      complete: {
+        one: 'Campo traducido de {source}.',
+        many: '{count} campos traducidos de {source}.',
+      },
+    },
+    copy: {
+      none: 'No se ha copiado nada.',
+      complete: {
+        one: 'Campo copiado de {source}.',
+        many: '{count} campos copiados de {source}.',
+      },
+    },
+  },
+  validation: {
+    value_missing: 'Este campo es requerido.',
+    range_underflow: {
+      number: 'El valor debe ser mayor o igual a {min}.',
+      select_many: 'Tienes que seleccionar al menos {min} elementos.',
+      select_one: 'Tienes que seleccionar al menos {min} elemento.',
+      add_many: 'Tienes que añadir al menos {min} elementos.',
+      add_one: 'Tienes que añadir al menos {min} elemento.',
+    },
+    range_overflow: {
+      number: 'El valor debe ser menor o igual a {max}.',
+      select_many: 'No puedes seleccionar más de {max} elementos.',
+      select_one: 'No puedes seleccionar más de {max} elemento.',
+      add_many: 'No puedes añadir más de {max} elementos.',
+      add_one: 'No puedes añadir más de {max} elemento.',
+    },
+    too_short: {
+      one: 'Debes introducir al menos {min} carácter.',
+      many: 'Debes introducir al menos {min} caracteres.',
+    },
+    too_long: {
+      one: 'No puedes introducir más de {max} carácter.',
+      many: 'No puedes introducir más de {max} caracteres.',
+    },
+    type_mismatch: {
+      number: 'Por favor, introduce un número.',
+      email: 'Por favor, introduce un correo electrónico válido.',
+      url: 'Por favor, introduce una URL válida.',
+    },
+  },
+  saving_entry: {
+    error: {
+      title: 'Error',
+      description: 'Hubo un error al guardar la entrada. Por favor, inténtalo de nuevo más tarde.',
+    },
+  },
+
+  // Detalles de multimedia
+  viewing_x_asset_details: 'Estás viendo los detalles del recurso “{name}”.',
+  asset_editor: 'Editor de recursos',
+  preview_unavailable: 'Vista previa no disponible.',
+  public_url: 'URL pública',
+  public_urls: 'URLs públicas',
+  file_path: 'Ruta del archivo',
+  file_paths: 'Rutas de los archivos',
+  file_data: 'Datos del archivo',
+  kind: 'Tipo',
+  size: 'Tamaño',
+  dimensions: 'Dimensiones',
+  duration: 'Duración',
+  used_in: 'Usado en',
+  created_date: 'Fecha de creación',
+  location: 'Ubicación',
+  map_lat_lng: 'Mapa mostrando latitud {latitude}, longitud {longitude}',
+
+  // Widgets
+  select_file: 'Seleccionar archivo',
+  select_image: 'Seleccionar imagen',
+  replace_file: 'Reemplazar archivo',
+  replace_image: 'Reemplazar imagen',
+  remove_file: 'Quitar archivo',
+  remove_image: 'Quitar imagen',
+  remove_this_item: 'Quitar este elemento',
+  move_up: 'Mover arriba',
+  move_down: 'Mover abajo',
+  add_x: 'Añadir {name}',
+  add_item_above: 'Añadir elemento arriba',
+  add_item_below: 'Añadir elemento abajo',
+  select_list_type: 'Seleccionar tipo de lista',
+  opacity: 'Opacidad',
+  unselected_option: '(Ninguno)',
+  assets_dialog: {
+    title: {
+      file: 'Seleccionar archivo',
+      image: 'Seleccionar imagen',
+    },
+    search_for_file: 'Buscar archivos',
+    search_for_image: 'Buscar imágenes',
+    locations: 'Ubicaciones',
+    folder: {
+      field: 'Recursos del campo',
+      entry: 'Recursos de la entrada',
+      file: 'Recursos del archivo',
+      collection: 'Recursos de la colección',
+      global: 'Recursos globales',
+    },
+    error: {
+      invalid_key: 'Tu clave de API no es válida o ha caducado. Por favor, revísala e inténtalo de nuevo.',
+      search_fetch_failed: 'Hubo un error al buscar recursos. Por favor, inténtalo de nuevo más tarde.',
+      image_fetch_failed:
+        'Hubo un error al descargar el recurso seleccionado. Por favor, inténtalo de nuevo más tarde.',
+    },
+    available_images: 'Imágenes disponibles',
+    enter_url: 'Introducir URL',
+    enter_file_url: 'Introducir URL del archivo:',
+    enter_image_url: 'Introducir URL de la imagen:',
+    large_file: {
+      title: 'Archivo grande',
+    },
+    photo_credit: {
+      title: 'Crédito de la foto',
+      description: 'Usa el siguiente crédito si es posible:',
+    },
+    unsaved: 'Sin guardar',
+  },
+  character_counter: {
+    min_max: {
+      one: '{count} carácter introducido. Mínimo: {min}. Máximo: {max}.',
+      many: '{count} caracteres introducidos. Mínimo: {min}. Máximo: {max}.',
+    },
+    min: {
+      one: '{count} carácter introducido. Mínimo: {min}.',
+      many: '{count} caracteres introducidos. Mínimo: {min}.',
+    },
+    max: {
+      one: '{count} carácter introducido. Máximo: {max}.',
+      many: '{count} caracteres introducidos. Máximo: {max}.',
+    },
+  },
+  youtube_video_player: 'Reproductor de vídeo de YouTube',
+  today: 'Hoy',
+  now: 'Ahora',
+  editor_components: {
+    image: 'Imagen',
+    src: 'Fuente',
+    alt: 'Texto alternativo',
+    title: 'Título',
+    link: 'Enlace',
+  },
+  key_value: {
+    key: 'Clave',
+    value: 'Valor',
+    action: 'Acción',
+    empty_key: 'Se requiere una clave.',
+    duplicate_key: 'La clave debe ser única.',
+  },
+  find_place: 'Encontrar un lugar',
+  use_your_location: 'Usar tu ubicación',
+  geolocation_error_title: 'Error de geolocalización',
+  geolocation_error_body: 'Hubo un error al recuperar tu ubicación.',
+  geolocation_unsupported: 'La API de geolocalización no es compatible con este navegador.',
+
+  // Vista previa de contenido
+  boolean: {
+    true: 'Sí',
+    false: 'No',
+  },
+
+  // Integraciones
+  cloud_storage: {
+    invalid: 'El servicio no está configurado correctamente.',
+    auth: {
+      initial: 'Inicia sesión en {service} para insertar multimedia del almacenamiento en los campos de entrada.',
+      requested: 'Iniciando sesión…',
+      error: 'El nombre de usuario o la contraseña son incorrectos. Por favor, revísalos e inténtalo de nuevo.',
+    },
+  },
+
+  // Configuración
+  config: {
+    error: {
+      no_secure_context: 'Sveltia CMS solo funciona con URLs HTTPS o localhost.',
+      fetch_failed: 'No se pudo recuperar el archivo de configuración.',
+      fetch_failed_not_ok: 'La respuesta HTTP devolvió un estado {status}.',
+      parse_failed: 'No se pudo analizar el archivo de configuración.',
+      parse_failed_invalid_object: 'El archivo de configuración no es un objeto JavaScript válido.',
+      parse_failed_unsupported_type:
+        'El archivo de configuración no es de un tipo de archivo válido. Solo se admiten YAML y JSON.',
+      no_collection: 'Las colecciones no están definidas en el archivo de configuración.',
+      missing_backend: 'El backend no está definido en el archivo de configuración.',
+      missing_backend_name: 'El nombre del backend no está definido en el archivo de configuración.',
+      unsupported_backend: 'El backend “{name}” configurado no es compatible.',
+      missing_repository: 'El repositorio no está definido en el archivo de configuración.',
+      invalid_repository:
+        'El repositorio configurado no es válido. Debe estar en el formato “propietario/repo”.',
+      oauth_implicit_flow: 'El método de autenticación configurado (flujo implícito) no es compatible.',
+      oauth_no_app_id: 'El ID de la aplicación OAuth no está definido en el archivo de configuración.',
+      missing_media_folder: 'La carpeta de multimedia no está definida en el archivo de configuración.',
+      invalid_media_folder: 'La carpeta de multimedia configurada no es válida. Debe ser una cadena de texto.',
+      invalid_public_folder: 'La carpeta pública configurada no es válida. Debe ser una cadena de texto.',
+      public_folder_relative_path:
+        'La carpeta pública configurada no es válida. Debe ser una ruta absoluta que comience con “/”.',
+      public_folder_absolute_url: 'No se admite una URL absoluta para la opción de carpeta pública.',
+      unexpected: 'Hubo un error inesperado al validar el archivo de configuración.',
+      try_again: 'Por favor, resuelve el problema e inténtalo de nuevo.',
+    },
+  },
+
+  // Backends
+  local_backend: {
+    unsupported_browser:
+      'El desarrollo local no es compatible con tu navegador. Por favor, usa Chrome o Edge en su lugar.',
+    disabled: 'El desarrollo local está deshabilitado en tu navegador. <a>Aquí te explicamos cómo habilitarlo</a>.',
+  },
+
+  // Flujo de trabajo editorial
+  status: {
+    drafts: 'Borradores',
+    in_review: 'En revisión',
+    ready: 'Listo',
+  },
+
+  // Ajustes
+  categories: 'Categorías',
+  prefs: {
+    changes: {
+      api_key_saved: 'La clave de API ha sido guardada.',
+      api_key_removed: 'La clave de API ha sido eliminada.',
+    },
+    error: {
+      permission_denied:
+        'El acceso al almacenamiento del navegador (Cookie) ha sido denegado. Por favor, revisa el permiso e inténtalo de nuevo.',
+    },
+    appearance: {
+      title: 'Apariencia',
+      theme: 'Tema',
+      select_theme: 'Seleccionar tema',
+    },
+    theme: {
+      auto: 'Automático',
+      dark: 'Oscuro',
+      light: 'Claro',
+    },
+    language: {
+      title: 'Idioma',
+      ui_language: {
+        title: 'Idioma de la interfaz de usuario',
+        select_language: 'Seleccionar idioma',
+      },
+    },
+    contents: {
+      title: 'Contenidos',
+      editor: {
+        title: 'Editor',
+        use_draft_backup: {
+          switch_label: 'Hacer copia de seguridad automática de los borradores de entrada',
+        },
+        close_on_save: {
+          switch_label: 'Cerrar el editor después de guardar un borrador',
+        },
+        close_with_escape: {
+          switch_label: 'Cerrar el editor con la tecla Escape',
+        },
+      },
+    },
+    i18n: {
+      title: 'Internacionalización',
+      default_translator: {
+        title: 'Servicio de traducción predeterminado',
+        select_service: 'Seleccionar servicio',
+      },
+      translator: {
+        field_label: 'Clave de {service}',
+        description:
+          'Regístrate en <a {homeHref}>{service}</a> e introduce <a {apiKeyHref}>tu clave de API</a> aquí para habilitar la traducción rápida de los campos de texto de la entrada.',
+      },
+    },
+    media: {
+      title: 'Multimedia',
+      stock_photos: {
+        title: 'Imágenes gratuitas de {service}',
+        field_label: 'Clave de API de {service}',
+        description:
+          'Regístrate en <a {homeHref}>la API de {service}</a> e introduce <a {apiKeyHref}>tu clave de API</a> aquí para insertar fotos de stock gratuitas en los campos de imagen de la entrada.',
+        credit: 'Fotos proporcionadas por {service}',
+        providers_disabled: 'Los proveedores de recursos de stock están deshabilitados por el administrador.',
+      },
+    },
+    accessibility: {
+      title: 'Accesibilidad',
+      underline_links: {
+        title: 'Subrayar enlaces',
+        description: 'Mostrar subrayado para los enlaces en la vista previa de la entrada y en las etiquetas de la interfaz de usuario.',
+        switch_label: 'Siempre subrayar enlaces',
+      },
+    },
+    advanced: {
+      title: 'Avanzado',
+      beta: {
+        title: 'Funcionalidades beta',
+        description: 'Habilitar algunas funcionalidades beta que pueden ser inestables o no estar localizadas.',
+        switch_label: 'Unirse al programa beta',
+      },
+      developer_mode: {
+        title: 'Modo de desarrollador',
+        description:
+          'Habilitar algunas funcionalidades orientadas a desarrolladores, incluyendo registros de consola detallados y menús contextuales nativos.',
+        switch_label: 'Habilitar modo de desarrollador',
+      },
+      deploy_hook: {
+        title: 'Webhook de despliegue',
+        description:
+          'Introduce una URL de webhook que se llamará cuando actives manualmente un despliegue seleccionando Publicar cambios. Esto se puede dejar en blanco si estás usando Acciones de GitHub.',
+        field_label: 'URL de Webhook de despliegue',
+        url_saved: 'La URL del webhook ha sido guardada.',
+        url_removed: 'La URL del webhook ha sido eliminada.',
+      },
+    },
+  },
+
+  // Atajos de teclado
+  keyboard_shortcuts_: {
+    view_content_library: 'Ver biblioteca de contenidos',
+    view_asset_library: 'Ver biblioteca de recursos',
+    search: 'Buscar entradas y recursos',
+    create_entry: 'Crear una nueva entrada',
+    save_entry: 'Guardar una entrada',
+    cancel_editing: 'Cancelar edición de entrada',
+  },
+
+  // Tipos de archivo
+  file_type_labels: {
+    avif: 'Imagen AVIF',
+    bmp: 'Imagen de mapa de bits',
+    gif: 'Imagen GIF',
+    ico: 'Icono',
+    jpeg: 'Imagen JPEG',
+    jpg: 'Imagen JPEG',
+    png: 'Imagen PNG',
+    svg: 'Imagen SVG',
+    tif: 'Imagen TIFF',
+    tiff: 'Imagen TIFF',
+    webp: 'Imagen WebP',
+    avi: 'Vídeo AVI',
+    m4v: 'Vídeo MP4',
+    mov: 'Vídeo QuickTime',
+    mp4: 'Vídeo MP4',
+    mpeg: 'Vídeo MPEG',
+    mpg: 'Vídeo MPEG',
+    ogg: 'Vídeo Ogg',
+    ogv: 'Vídeo Ogg',
+    ts: 'Vídeo MPEG',
+    webm: 'Vídeo WebM',
+    '3gp': 'Vídeo 3GPP',
+    '3g2': 'Vídeo 3GPP2',
+    aac: 'Audio AAC',
+    mid: 'MIDI',
+    midi: 'MIDI',
+    m4a: 'Audio MP4',
+    mp3: 'Audio MP3',
+    oga: 'Audio Ogg',
+    opus: 'Audio OPUS',
+    wav: 'Audio WAV',
+    weba: 'Audio WebM',
+    csv: 'Hoja de cálculo CSV',
+    doc: 'Documento de Word',
+    docx: 'Documento de Word',
+    odp: 'Presentación OpenDocument',
+    ods: 'Hoja de cálculo OpenDocument',
+    odt: 'Texto OpenDocument',
+    pdf: 'Documento PDF',
+    ppt: 'Presentación de PowerPoint',
+    pptx: 'Presentación de PowerPoint',
+    rtf: 'Documento de texto enriquecido',
+    xls: 'Hoja de cálculo de Excel',
+    xlsx: 'Hoja de cálculo de Excel',
+    html: 'Texto HTML',
+    js: 'JavaScript',
+    json: 'Texto JSON',
+    md: 'Texto Markdown',
+    toml: 'Texto TOML',
+    yaml: 'Texto YAML',
+    yml: 'Texto YAML',
+  },
+
+  // Unidades de tamaño de archivo
+  file_size_units: {
+    b: '{size} bytes',
+    kb: '{size} KB',
+    mb: '{size} MB',
+    gb: '{size} GB',
+    tb: '{size} TB',
+  },
+};

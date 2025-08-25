@@ -7,3 +7,5 @@ GITHUB_CLIENT_ID = "Ov23lizFauqg5DImQOtf"
 GITHUB_CLIENT_SECRET = "623247926278ffbf8bd206f69aeca76c73ebda60"
 ALLOWED_DOMAINS = "sebastiandemo.netlify.app"
 
+[site]
+bucket = "./public"

@@ -8,8 +8,8 @@ backend:
   auth_endpoint: "auth"                 
   token_endpoint: "callback"            
 
-media_folder: "assets/images"
-public_folder: "/images"
+media_folder: "img/uploads"     # Carpeta en el repo donde se guardan las imágenes nuevas
+public_folder: "/img/uploads"   # Ruta pública para mostrarlas en la web
 
 collections:
   - name: "site_content"
@@ -24,6 +24,106 @@ collections:
           - { label: "Subtítulo",        name: "header_subtitle",   widget: "string" }
           - { label: "Texto del botón",  name: "header_button_text",widget: "string" }
           - { label: "Enlace del botón", name: "header_button_link",widget: "string" }
+
+
+
+      # PORTFOLIO
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "content/portfolio.md"
+        fields:
+          - { label: "Imagen 1", name: "portfolio_img_1", widget: "image" }
+          - { label: "Título imagen 1", name: "portfolio_title_1", widget: "string" }
+          - { label: "Descripción imagen 1", name: "portfolio_desc_1", widget: "string" }
+
+          - { label: "Imagen 2", name: "portfolio_img_2", widget: "image" }
+          - { label: "Título imagen 2", name: "portfolio_title_2", widget: "string" }
+          - { label: "Descripción imagen 2", name: "portfolio_desc_2", widget: "string" }
+
+          - { label: "Imagen 3", name: "portfolio_img_3", widget: "image" }
+          - { label: "Título imagen 3", name: "portfolio_title_3", widget: "string" }
+          - { label: "Descripción imagen 3", name: "portfolio_desc_3", widget: "string" }
+
+          - { label: "Imagen 4", name: "portfolio_img_4", widget: "image" }
+          - { label: "Título imagen 4", name: "portfolio_title_4", widget: "string" }
+          - { label: "Descripción imagen 4", name: "portfolio_desc_4", widget: "string" }
+
+
+
+
+      # ABOUT
+      - label: "About"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Color de fondo", name: "about_background_color", widget: "color", default: "#f8f9fa" }
+          - { label: "Título", name: "about_title", widget: "string" }
+          - { label: "Subtítulo", name: "about_subtitle", widget: "string" }
+          - { label: "Texto del botón", name: "about_button_text", widget: "string" }
+          - { label: "Enlace del botón", name: "about_button_link", widget: "string" }
+
+      # FOOTER
+      - label: "Footer"
+        name: "footer"
+        file: "content/footer.md"
+        fields:
+          - { label: "Enlace Facebook", name: "footer_link_facebook", widget: "string" }
+          - { label: "Enlace Twitter", name: "footer_link_twitter", widget: "string" }
+          - { label: "Enlace GitHub", name: "footer_link_github", widget: "string" }
+          - { label: "Texto copyright", name: "footer_copy_text", widget: "string" }
+
+
+
+      # SERVICES
+      - label: "Services"
+        name: "services"
+        file: "content/services.md"
+        fields:
+          - { label: "Color de fondo", name: "services_background_color", widget: "color", default: "#f8f9fa" }
+
+          - { label: "Subtítulo", name: "services_subtitle", widget: "string" }
+          - { label: "Título principal", name: "services_title", widget: "string" }
+
+          - { label: "Título servicio 1", name: "service_title_1", widget: "string" }
+          - { label: "Descripción servicio 1", name: "service_desc_1", widget: "string" }
+
+          - { label: "Título servicio 2", name: "service_title_2", widget: "string" }
+          - { label: "Descripción servicio 2", name: "service_desc_2", widget: "string" }
+
+          - { label: "Título servicio 3", name: "service_title_3", widget: "string" }
+          - { label: "Descripción servicio 3", name: "service_desc_3", widget: "string" }
+
+          - { label: "Título servicio 4", name: "service_title_4", widget: "string" }
+          - { label: "Descripción servicio 4", name: "service_desc_4", widget: "string" }
+
+
+      # CALLOUT
+      - label: "Callout"
+        name: "callout"
+        file: "content/callout.md"
+        fields:
+          - { label: "Título", name: "callout_title", widget: "markdown" }
+          - { label: "Texto del botón", name: "callout_button_text", widget: "string" }
+          - { label: "Enlace del botón", name: "callout_button_link", widget: "string" }
+          - { label: "Imagen de fondo", name: "callout_background", widget: "image" }
+
+      # CTA
+      - label: "Call to Action"
+        name: "cta"
+        file: "content/cta.md"
+        fields:
+          - { label: "Color de fondo", name: "cta_background_color", widget: "color", default: "#f8f9fa" }
+
+          - { label: "Título", name: "cta_title", widget: "string" }
+
+          - { label: "Texto botón 1", name: "cta_button_1_text", widget: "string" }
+          - { label: "Enlace botón 1", name: "cta_button_1_link", widget: "string" }
+
+          - { label: "Texto botón 2", name: "cta_button_2_text", widget: "string" }
+          - { label: "Enlace botón 2", name: "cta_button_2_link", widget: "string" }
+
+
+
 
 
 
